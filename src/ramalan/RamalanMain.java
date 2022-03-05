@@ -1,5 +1,7 @@
 package ramalan;
 
+import com.sun.prism.shader.Texture_ImagePattern_AlphaTest_Loader;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
@@ -43,9 +45,16 @@ public class RamalanMain {
         String kecocokan_fin = String.format("%.02f",kecocokan);
 
         //tampilkan hasil
-        System.out.println("\n"+nama_user+" ["+umur_user+"]");
-        System.out.println("    ♥   ");
-        System.out.println(nama_pasangan+" ["+umur_pasangan+"]");
+        System.out.println("\n"+nama_user+" ["+umur_user+"] tahun");
+        System.out.println("  ♥♥♥    ♥♥♥ ");
+        System.out.println(" ♥♥♥♥♥,,♥♥♥♥♥ ");
+        System.out.println(" ♥♥♥♥♥♥♥♥♥♥♥♥ ");
+        System.out.println("  ♥♥♥♥♥♥♥♥♥♥ ");
+        System.out.println("    ♥♥♥♥♥♥ ");
+        System.out.println("      ♥♥♥ ");
+
+        //loveIcon();
+        System.out.println(nama_pasangan+" ["+umur_pasangan+"] tahun");
 
         System.out.println("\nkecocokan anda dan pasangan : "+kecocokan_fin+" %");
 
@@ -67,5 +76,47 @@ public class RamalanMain {
         }
         return kecocokan;
     }
+    private static void loveIcon(){
+       // HERE, we have set the size of Heart, size = 10
+        int a, b, size = 8;
+
+        /* FOR THE APEX OF HEART */
+        for (a = size / 2; a <= size; a = a + 2) {
+
+            // FOR SPACE BEFORE PEAK-1 : PART 1
+            for (b = 1; b < size - a; b = b + 2)
+                System.out.print(" ");
+
+            // FOR PRINTING PEAK-1 : PART 2
+            for (b = 1; b <= a; b++)
+                System.out.print("♥");
+
+            // FOR SPACE B/W PEAK-1 AND PEAK-2 : PART 3
+            for (b = 1; b <= size - a; b++)
+                System.out.print(" ");
+
+            // FOR PRINTING PEAK-2 : PART 4
+            for (b = 1; b <= a - 1; b++)
+                System.out.print("♥");
+
+            System.out.print("\n");
+        }
+
+        /*FOR THE BASE OF HEART ie. THE INVERTED TRIANGLE */
+
+        for (a = size; a >= 0; a--) {
+
+            // FOR SPACE BEFORE THE INVERTED TRIANGLE : PART 5
+            for (b = a; b < size; b++)
+                System.out.print(" ");
+
+            // FOR PRINTING THE BASE OF TRIANGLE : PART 6
+            for (b = 1; b <= ((a * 2) - 1); b++)
+                System.out.print("♥");
+
+            System.out.print("\n");
+        }
+    }
 
 }
+
