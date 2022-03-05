@@ -22,32 +22,45 @@ public class RamalanMain {
         System.out.println("++++++++++++++++++++++++++++++++++++++");
 
         //Data Awal
-        System.out.println("Masukkan Data anda:");
+        System.out.println("Masukkan Data Anda:");
         System.out.println("♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥");
         System.out.print("Masukkan Nama Anda : ");
         nama_user = key.nextLine();
-
         System.out.print("Masukkan Umur Anda : ");
-        umur_user = key.nextInt();
+        umur_user = Integer.parseInt(key.nextLine());
+
+        System.out.println("Masukkan Data Pasangan Anda:");
+        System.out.println("♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥");
         System.out.print("Masukkan Nama Pasangan Anda : ");
         nama_pasangan = key.nextLine();
-        //line ini untuk consume /n dari string sebelumnya. biar gak skip
-        key.nextLine();
-
         System.out.print("Masukkan Umur Pasangan Anda : ");
-        umur_pasangan = key.nextInt();
-        System.out.println("Tekan enter untuk melihat hasil ");
+        //di parse jd int biar kebaca
+        umur_pasangan = Integer.parseInt(key.nextLine());
+
+        kecocokan = calcFitness();
+        System.out.println(nama_user+" ["+umur_user+"]");
+        System.out.println("    ♥   ");
+        System.out.println(nama_pasangan+" ["+umur_pasangan+"]");
+
+        System.out.println("kecocokan anda dan pasangan : "+kecocokan+" %");
+
+    }
+
+    private static Double calcFitness(){
+        int random_num;
+        Double kecocokan = null;
+        System.out.print("Tekan enter untuk melihat hasil... ");
         try
         {
             System.in.read();
             random_num = (int) ((random() * (100 - 50)) + 50);
             kecocokan=random_num/1.1;
-            System.out.println("Kecocokan anda adalah " +kecocokan+ "%");
         }
         catch(Exception e)
         {
-            System.out.println(e);
+             System.out.println(""+e);
         }
-
+        return kecocokan;
     }
+
 }
