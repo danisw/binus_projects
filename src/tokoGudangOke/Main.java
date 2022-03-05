@@ -1,10 +1,8 @@
 package tokoGudangOke;
 
-import java.io.PrintStream;
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
-public class Barang {
+public class Main {
     public static void main(String[] args) {
 
         // Deklarasi variable
