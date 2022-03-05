@@ -37,7 +37,10 @@ public class RamalanMain {
         //di parse jd int biar kebaca
         umur_pasangan = Integer.parseInt(key.nextLine());
 
+        //menghitung kecocokan
         kecocokan = calcFitness();
+
+        //tampilkan hasil
         System.out.println(nama_user+" ["+umur_user+"]");
         System.out.println("    ♥   ");
         System.out.println(nama_pasangan+" ["+umur_pasangan+"]");
