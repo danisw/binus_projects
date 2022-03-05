@@ -29,7 +29,7 @@ public class RamalanMain {
         System.out.print("Masukkan Umur Anda : ");
         umur_user = Integer.parseInt(key.nextLine());
 
-        System.out.println("Masukkan Data Pasangan Anda:");
+        System.out.println("\nMasukkan Data Pasangan Anda:");
         System.out.println("♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥");
         System.out.print("Masukkan Nama Pasangan Anda : ");
         nama_pasangan = key.nextLine();
@@ -39,20 +39,22 @@ public class RamalanMain {
 
         //menghitung kecocokan
         kecocokan = calcFitness();
+        //bulatkan 2 angka dibelakang koma
+        String kecocokan_fin = String.format("%.02f",kecocokan);
 
         //tampilkan hasil
-        System.out.println(nama_user+" ["+umur_user+"]");
+        System.out.println("\n"+nama_user+" ["+umur_user+"]");
         System.out.println("    ♥   ");
         System.out.println(nama_pasangan+" ["+umur_pasangan+"]");
 
-        System.out.println("kecocokan anda dan pasangan : "+kecocokan+" %");
+        System.out.println("\nkecocokan anda dan pasangan : "+kecocokan_fin+" %");
 
     }
 
     private static Double calcFitness(){
         int random_num;
         Double kecocokan = null;
-        System.out.print("Tekan enter untuk melihat hasil... ");
+        System.out.print("\nTekan enter untuk melihat hasil... ");
         try
         {
             System.in.read();
