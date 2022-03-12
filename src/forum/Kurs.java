@@ -6,14 +6,6 @@ public class Kurs {
 
     public static void main(String[] args) {
 
-        //inisiasi variable menampung pilihan konversi
-        int choice;
-
-        //inisiasi variable nilai currency dalam rupiah
-        double valMYR=3415.66, valCNY=2259.85,valSGD=10635.56, valJPY=122.15;
-
-        //inisiasi variable inputan user dan variable hasil
-        double value, result;
 
         //inisiasi object
         Scanner keyboard = new Scanner(System.in);
@@ -28,6 +20,18 @@ public class Kurs {
         System.out.println("7. JPY to IDR?");
         System.out.println("8. IDR to JPY?");
 
+        convert(keyboard);
+
+    }
+    public static void convert(Scanner keyboard){
+        //inisiasi variable menampung pilihan konversi
+        int choice;
+
+        //inisiasi variable nilai currency dalam rupiah
+        double valMYR=3415.66, valCNY=2259.85,valSGD=10635.56, valJPY=122.15;
+
+        //inisiasi variable inputan user dan variable hasil
+        double value, result;
         //pilihan uuser di assign ke variable choice
         System.out.print("input the number : ");
         choice = keyboard.nextInt();
@@ -84,6 +88,5 @@ public class Kurs {
             default :
                 System.out.println("Please choose your conversion");
         }
-
     }
 }
