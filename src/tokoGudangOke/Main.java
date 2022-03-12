@@ -1,5 +1,6 @@
 package tokoGudangOke;
 
+
 import java.util.Scanner;
 
 public class Main {
@@ -44,8 +45,8 @@ public class Main {
         System.out.println("###########################");
         System.out.println("Nama barang   : " + nama_barang);
         System.out.println("Jumlah barang : " + jumlah_barang);
-        System.out.println("harga beli    : " + String.format("%.02f", harga_beli));
-        System.out.println("harga jual    : " + String.format("%.02f", harga_jual));
+        System.out.println("harga beli    : " + String.format("%.2f", harga_beli));
+        System.out.println("harga jual    : " + String.format("%.2f", harga_jual));
 
         System.out.println("\n###### Bye " +nama_user+", see u again! ######");
     }
